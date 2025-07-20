@@ -337,24 +337,35 @@ One brain, two passports, and a scientific track record in English.</p>
 </section>
 
   <section id="contact" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="max-w-xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let’s Work Together</h2>
-        <p class="text-gray-600">I help teams think, plan smarter, and connect science with strategy.</p> 
-    	<p class="text-gray-600">Share your idea — I’ll reply within 48 hours. All inquiries are handled with professional discretion and confidentiality.</p>
-        <p class="text-gray-600">Need an NDA? I’m happy to sign one if we move forward.</p>
-      </div>
-      <form action="https://formspree.io/f/your-form-id" method="POST" class="max-w-2xl mx-auto grid gap-6 bg-gray-50 p-8 rounded-2xl shadow-lg" data-anim>
-        <div class="grid md:grid-cols-2 gap-4">
-          <input type="text" name="name" placeholder="Full Name" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
-          <input type="email" name="email" placeholder="Email Address" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
-        </div>
-        <input type="text" name="company" placeholder="Organisation / Project" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
-        <textarea name="message" rows="5" placeholder="Tell me about your goals…" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary"></textarea>
-        <button type="submit" class="bg-accent hover:bg-[#E63946]/90 text-white font-semibold py-3 px-6 rounded-lg w-full md:w-auto transition">Send Message</button>
-      </form>
+  <div class="container mx-auto px-6">
+    <div class="max-w-xl mx-auto text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Let’s Work Together</h2>
+      <p class="text-gray-600">I help teams think, plan smarter, and connect science with strategy.</p>
+      <p class="text-gray-600">Share your idea — I’ll reply within 48 hours. All inquiries are handled with professional discretion and confidentiality.</p>
+      <p class="text-gray-600">Need an NDA? I’m happy to sign one if we move forward.</p>
     </div>
-  </section>
+
+    <!-- Web3Forms Integration -->
+    <form action="https://api.web3forms.com/submit " method="POST" class="max-w-2xl mx-auto grid gap-6 bg-gray-50 p-8 rounded-2xl shadow-lg" data-anim>
+      <!-- Access Key -->
+      <input type="hidden" name="access_key" value="9c8b8393-9031-4f5b-9d1e-743372290416" />
+
+      <!-- Bot Verification (Optional) -->
+      <input type="text" name="bot-verification" class="hidden" />
+
+      <!-- Form Fields -->
+      <div class="grid md:grid-cols-2 gap-4">
+        <input type="text" name="name" placeholder="Full Name" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
+        <input type="email" name="email" placeholder="Email Address" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
+      </div>
+      <input type="text" name="company" placeholder="Organisation / Project" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
+      <textarea name="message" rows="5" placeholder="Tell me about your goals…" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary"></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit" class="bg-accent hover:bg-[#E63946]/90 text-white font-semibold py-3 px-6 rounded-lg w-full md:w-auto transition">Send Message</button>
+    </form>
+  </div>
+</section>
 
   <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
     &copy; <span id="year"></span> Luciana Bonnot — All rights reserved.
