@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luciana Bonnot | Neuroscience Consulting</title>
+  <meta name="description" content="Consulting, real‑world evidence & training at the crossroads of neuroscience and healthcare innovation." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // E63946 (Strong Red) - Used for primary actions, highlights, and emphasis
+            // F1FAEE (Light Cream/White) - Used for backgrounds, general text
+            // A8DADC (Light Blue/Teal) - Secondary accent, subtle backgrounds
+            // 457B9D (Medium Blue) - Primary dark blue, for text, icons, hover states
+            // 1D3557 (Darker Blue) - Main primary color, for strong elements
+            primary: {
+              DEFAULT: '#1D3557',     // Darker Blue
+              light:   '#457B9D',     // Medium Blue
+              lighter: '#A8DADC'      // Light Blue/Teal
+            },
+            accent:  '#E63946',       // Strong Red
+            background: '#F1FAEE'    // Light Cream/White
+          },
+          fontFamily: {
+            headline: ['Inter', 'sans-serif']
+          },
+          keyframes: {
+            fadeUp: {
+              '0%':   {opacity:0, transform:'translateY(20px)'},
+              '100%': {opacity:1, transform:'translateY(0)'}
+            },
+            gradientShift: {
+              '0%,100%': {backgroundPosition: '0% 50%'},
+              '50%':      {backgroundPosition: '100% 50%'}
+            }
+          },
+          animation: {
+            fadeUp:        'fadeUp .8s ease-out forwards',
+            gradientShift: 'gradientShift 12s ease infinite'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    
+    /* Smooth height+opacity transition for mobile menu */
+    .transition-height {
+      transition: max-height 0.35s ease, opacity 0.35s ease;
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800 scroll-smooth bg-background">
+  <!-- <header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur shadow-sm">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="text-xl font-bold text-primary">Luciana&nbsp;Bonnot</a>
+      <nav class="hidden md:flex space-x-8 font-medium">
+        <a href="#about"    class="hover:text-primary">About</a>
+        <a href="#why"      class="hover:text-primary">Why&nbsp;Me</a>
+        <a href="#services" class="hover:text-primary">Expertise</a>
+        <a href="#course"   class="hover:text-primary">Course</a>
+        <a href="#book"   class="hover:text-primary">Book</a>
+
+        <a href="#contact"  class="hover:text-primary">Contact</a>
+      </nav>
+      <button id="navBtn" class="md:hidden focus:outline-none" aria-label="Toggle navigation menu">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="navMenu" class="md:hidden max-h-0 opacity-0 overflow-hidden transition-height">
+      <div class="bg-white border-t px-6 pb-4 flex flex-col space-y-2 font-medium">
+        <a href="#about"    class="hover:text-primary">About</a>
+        <a href="#why"      class="hover:text-primary">Why&nbsp;Me</a>
+        <a href="#services" class="hover:text-primary">Expertise</a>
+        <a href="#course"   class="hover:text-primary">Course</a>
+        <a href="#book" class="hover:text-primary">Book</a>
+        <a href="#contact"  class="hover:text-primary">Contact</a>
+      </div>
+    </div>
+  </header> -->
+
+
+<header class="fixed inset-x-0 top-0 z-50 bg-primary-light/90 backdrop-blur shadow-sm">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="text-white text-xl font-bold">Luciana&nbsp;Bonnot</a>
+      <nav class="hidden md:flex space-x-8 font-medium">
+        <a href="#about"    class="text-white hover:text-primary">About</a>
+        <a href="#why"      class="text-white hover:text-primary">Why&nbsp;Me</a>
+        <a href="#services" class="text-white hover:text-primary">Expertise</a>
+        <a href="#course"   class="text-white hover:text-primary">Course</a>
+        <a href="#book"   class="text-white hover:text-primary">Book</a>
+
+        <a href="#contact"  class="text-white hover:text-primary">Contact</a>
+      </nav>
+      <button id="navBtn" class="md:hidden focus:outline-none" aria-label="Toggle navigation menu">
+        <svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="navMenu" class="md:hidden max-h-0 opacity-0 overflow-hidden transition-height">
+      <div class="bg-primary-lighter/90 border-t border-primary-light/20 px-6 pb-4 flex flex-col space-y-2 font-medium">
+        <a href="#about"    class="text-white hover:text-primary">About</a>
+        <a href="#why"      class="text-white hover:text-primary">Why&nbsp;Me</a>
+        <a href="#services" class="text-white hover:text-primary">Expertise</a>
+        <a href="#course"   class="text-white hover:text-primary">Course</a>
+        <a href="#book" class="text-white hover:text-primary">Book</a>
+        <a href="#contact"  class="text-white hover:text-primary">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="pt-32 md:pt-40 pb-20 bg-gradient-to-br from-primary via-[#1D3557] to-primary-light bg-[length:200%_200%] animate-gradientShift text-white">
+    <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12">
+      <div class="md:w-1/2" style="animation-delay:.1s" data-anim>
+        <h1 class="font-headline font-extrabold text-4xl md:text-5xl leading-tight mb-6">Bringing <span class="text-primary-lighter">Brain Science</span><br/> to Healthcare Innovation</h1>
+        <p class="text-lg md:text-xl mb-8 opacity-90 max-w-prose">I’m <strong>Luciana Bonnot</strong> — neuroscientist, educator & consultant. I help Health Tech and MedTech teams align their brain related tools with scientific and regulatory expectations before costly mistakes happens. <span class="text-primary-lighter font-semibold"> Translating cutting‑edge research is my passion.</span> </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="rounded-lg bg-background text-accent font-semibold py-3 px-8 text-center hover:bg-[#E63946]/90 hover:text-white transition">Schedule a Call</a>
+          <a href="#course"  class="rounded-lg border border-white/70 font-semibold py-3 px-8 text-center hover:bg-white/10 transition">View Online Course</a>
+        </div>
+      </div>
+      <figure class="md:w-1/2 relative" style="animation-delay:.2s" data-anim>
+  <picture>
+    <source type="image/webp" srcset="PhotoLucianaWebsite.webp" />
+    <img src="PhotoLucianaWebsite.jpg" alt="Luciana Bonnot portrait" class="rounded-full shadow-xl w-64 h-64 object-cover mx-auto" loading="lazy" />
+  </picture>
+</figure>
+    </div>
+  </section>
+
+
+  <section id="about" class="py-20 bg-background">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">About Luciana</h2>
+        <p class="text-gray-700 mb-5">With a PhD in Neuroscience and over <span class="text-accent font-medium">20+ years</span> of experience in research and teaching, I specialise in bridging rigorous science with real-world healthcare solutions. From performing large-scale neuroimaging studies at King’s College London to guiding cross-functional data science teams at Hospital Israelita Albert Einstein, my career spans academia, hospitals, and innovation-driven environments.</p>
+        <p class="text-gray-700 mb-5">I have a deep understanding of neurological and psychiatric conditions, as well as the scientific and operational demands of neuroradiology. From day one, I have helped brain-focused initiatives in multimodal imaging align with clinical evidence, regulations, and practical application.</p>
+        <p class="text-gray-700 mb-5">Today, I translate cutting-edge research and real-world evidence into practical strategies that improve patient care, products, and teams. Healthcare organisations, med-tech startups, and education providers unlock the power of brain science — whether by designing evidence‑based projects, interpreting data, or crafting engaging learning experiences.</p>
+		<p class="text-gray-700 mb-5">Fluent in English, French & Portuguese, I work globally from Île‑de‑France.</p>
+      </div>
+      <ul class="space-y-4" role="list">
+        <li class="flex items-start"><span class="mt-1 mr-3 text-accent">&#10004;</span> <span><strong>Scientific framing & evidence alignment</strong> — clarifying concepts, shaping questions, and identifying credible pathways before protocol design begins.</span></li>
+        <li class="flex items-start"><span class="mt-1 mr-3 text-accent">&#10004;</span> <span><strong>Early-phase project guidance</strong> — Supporting brain-focused initiatives with structured thinking and strategic input from idea to initial validation.</span></li>
+        <li class="flex items-start"><span class="mt-1 mr-3 text-accent">&#10004;</span> <span><strong>Real-World Evidence Insight</strong> — Helping define relevant endpoints, context-aware metrics, and meaningful signals in brain health.</span></li>
+        <li class="flex items-start"><span class="mt-1 mr-3 text-accent">&#10004;</span> <span><strong>Clear, credible communication </strong> — Translating complex science into strategic messages for regulatory, clinical, and stakeholder contexts.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="why" class="py-20 bg-background bg-background">
+    <div class="container mx-auto px-6 text-center max-w-4xl" data-anim>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Work With Me?</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition group">
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-primary">Scientific Rigor</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Every recommendation is grounded in peer‑reviewed research and robust methodology.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition group">
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-primary">Real‑World Impact</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">I convert complex findings into actionable strategies that improve outcomes and ROI.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition group">
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-primary">Global Perspective</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">Experience across Europe & Latin America enables culturally attuned and scalable solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-20 bg-background bg-background">
+    <div class="container mx-auto px-6 text-center mb-14">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Consulting Expertise</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">I guide brain-focused health innovations from concept to scientific readiness, offering early strategic clarity, evidence alignment, and a global perspective before execution begins.</p>
+    </div>
+    <div class="container mx-auto px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+          <!-- Icon for Project Leadership -  -->
+          <img src="target_figure.svg" alt="Target with arrow icon" class="w-11 h-11" onerror="this.onerror=null; this.src='https://placehold.co/28x28/A8DADC/1D3557?text=Target';" />
+        </div>
+        <h3 class="font-semibold text-xl mb-3">Scientific Readiness & Evidence Strategy</h3>
+        <p class="text-gray-600">Aligning neuroscience-based concepts with credible evidence, clever framing, and validation roadmaps — before launching protocols or pilots.
+</p>
+      </div>
+      <!-- <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2c4.418 0 8 2.62 8 7 0 2.18-1.44 4.09-3.39 5.15.23.93.39 1.83.39 2.83 0 2.21-1.79 4-4 4-1.267 0-2.4-.59-3.1-1.51-.73.91-1.81 1.51-3.1 1.51-2.21 0-4-1.79-4-4 0-1 .16-1.9.39-2.83C5.44 13.09 4 11.18 4 9c0-4.38 3.582-7 8-7z"/></svg>
+        </div>
+        <h3 class="font-semibold text-xl mb-3">Project Leadership</h3>
+        <p class="text-gray-600">Agile & PMP‑aligned management of multi‑disciplinary healthcare studies.</p>
+      </div>
+      -->
+      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+          <!-- Updated to use real_world_evidence.svg -->
+          <img src="real_world_evidence_red.svg" alt="RWE" class="w-7 h-7" onerror="this.onerror=null; this.src='https://placehold.co/28x28/A8DADC/1D3557?text=RWE';" />
+        </div>
+        <h3 class="font-semibold text-xl mb-3">Real-World Evidence Insight</h3>
+        <p class="text-gray-600">Defining and interpreting RWE strategies in brain health — focusing on meaningful endpoints and context-aware insight.</p>
+      </div> 
+      <!-- <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z"/></svg>
+        </div>
+        <h3 class="font-semibold text-xl mb-3">Neuroscience Training</h3>
+        <p class="text-gray-600">Engaging workshops translating brain science for clinicians, educators & data teams.</p>
+      </div> -->
+      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+          <!-- Updated to use brain.svg -->
+          <img src="brain_azul.svg" alt="Brain icon" class="w-10 h-10" onerror="this.onerror=null; this.src='https://placehold.co/28x28/A8DADC/1D3557?text=Brain';" />
+        </div>
+        <h3 class="font-semibold text-xl mb-3">Neuroscience Training</h3>
+        <p class="text-gray-600">Engaging workshops translating brain science for clinicians, educators & data teams.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+          <img src="document_icon.svg" alt="Medical Writing" class="w-7 h-7" onerror="this.onerror=null; this.src='https://placehold.co/28x28/A8DADC/1D3557?text=Diploma';" />
+        </div>
+        <h3 class="font-semibold text-xl mb-3">Scientific & Regulatory Communication</h3>
+        <p class="text-gray-600">Crafting science-grounded narratives for pitch decks, regulatory docs, and stakeholder materials — with clarity, credibility, and strategic focus.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+          <!-- Updated to use diploma.svg -->
+          <img src="data_analytics_red.svg" alt="Medical Writing" class="w-7 h-7" onerror="this.onerror=null; this.src='https://placehold.co/28x28/A8DADC/1D3557?text=Diploma';" />
+        </div>
+        <h3 class="font-semibold text-xl mb-3">Innovation Positioning & Regulatory Awareness</h3>
+        <p class="text-gray-600">Turning brain science into credible product narratives — grounded in evidence and aligned with CE/MDR expectations.</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+          <img src="speaking_engagements_blue.svg" alt="Medical Writing" class="w-10 h-10" onerror="this.onerror=null; this.src='https://placehold.co/28x28/A8DADC/1D3557?text=Diploma';" />
+        </div>
+        <h3 class="font-semibold text-xl mb-3">Education & Scientific Engagement</h3>
+        <p class="text-gray-600">Tailoring workshops and talks to translate neuroscience into actionable insights for health professionals, educators, and innovation teams.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="course" class="py-20 bg-background">
+  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="order-2 md:order-1" data-anim>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Online Course:<br/> <span class="text-accent">Do You Speak Brain?</span></h2>
+      <p class="text-gray-700 mb-5"><h3 class="font-semibold text-xl mb-3">Biological learning, explained with clarity.<h3></p>
+	<p class="text-gray-700 mb-5">This course isn’t just a class, it’s a demonstration of what I do best:
+		Translating complex neuroscience into accessible, visual, and strategic insights.</p>
+		<p class="text-gray-700 mb-5">Designed for professionals working in AI, education, health, and innovation, this course offers:</p>
+      <ul class="space-y-2 mb-6 text-gray-700 list-disc list-inside text-sm">
+        <li>A clear explanation of how biological learning works — from neurobiology to plasticity.</li>
+        <li>Practical tools for applying learning science to UX, product design, or patient education.</li>
+        <li>Vivid metaphors and plain-language storytelling — no need for scientific jargon or brain scans.</li>
+        <p class="text-gray-700 mb-5"><h2 class="font-semibold text-xl mb-3">3.5 hours of concise video lessons - Certificate included - Lifetime access<h2></p>
+      </ul>
+      <a href="https://www.udemy.com/course/the-learning-brain/" target="_blank" rel="noopener" class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-light transition">View on Udemy</a>
+    </div>
+    <figure class="order-1 md:order-2" data-anim>
+      <img src="curso.webp" alt="Course illustration" class="rounded-2xl shadow-xl w-full max-w-sm mx-auto" loading="lazy" />
+    </figure>
+  </div>
+</section>
+  <section id="testimonials" class="py-20 bg-background bg-neural-pattern">
+    <div class="container mx-auto px-6 text-center mb-14 max-w-4xl" data-anim>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">What you can expect</h2>
+      <p class="text-gray-600 mb-10">A few words from people who have partnered with me to turn neuroscience insights into measurable impact.</p>
+      <div class="grid md:grid-cols-2 gap-8 text-left">
+        <blockquote class="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition">
+          <p class="text-sm text-gray-700 mb-4">“Rapid understanding of complex topics”</p>
+          <footer class="text-xs font-medium text-gray-500">— Clarity in the middle of chaos</footer>
+        </blockquote>
+        <blockquote class="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition">
+          <p class="text-sm text-gray-700 mb-4">“Solid evidence, minus the academic fog”</p>
+          <footer class="text-xs font-medium text-gray-500">— No mumbo jumbo</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="py-20 bg-background bg-neural-pattern">
+  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-10">
+    <div class="order-1 md:order-1" data-anim>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">My Book:<br/><span class="text-accent">CIÊNCIA SEM PACIÊNCIA</span></h2>
+      <p class="text-lg md:text-xl mb-4 text-gray-700">How science works — no jargon, no patience required.</p>
+      <p class="mb-6 text-gray-700 max-w-prose">Ciência Sem Paciência is a short, accessible book I wrote for curious minds outside academia — people who want to understand how science works, how to spot reliable evidence, and how to resist seductive but misleading claims. It’s grounded in biology, but its core message applies to all scientific thinking.</p>
+
+      <ul class="space-y-2 mb-6 text-gray-700 list-disc list-inside text-sm">
+        <li>Demystifies the scientific process without oversimplifying.</li>
+        <li>Written in clear, conversational Portuguese.</li>
+        <li>Helps readers navigate misinformation and scientific-sounding hype.</li>
+        <li>A resource for students, educators, creators, and critical thinkers.</li>
+      </ul>
+
+      <div class="flex flex-col sm:flex-row gap-4 mb-6">
+        <a href="https://www.amazon.fr/CI%C3%8ANCIA-SEM-PACI%C3%8ANCIA-CIENT%C3%8DFICO-Portuguese-ebook/dp/B0D33MTSC1/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2ZIBCR1EQQTS&dib=eyJ2IjoiMSJ9.I-UH_7bhfKEnW4pDzGmtqw.5EIDm_aIgX17i1UMwXMRYMisBV0zOGU&dib_tag=se&keywords=ciencia+sem+paciencia&qid=1752220244&sprefix=ciencia+sem+paciencia%2Caps%2C61&sr=8-1" target="_blank" rel="noopener" class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-light  transition">View on Amazon</a>
+      </div>
+
+      <p class="text-sm text-gray-600">Kindle: 3,65 € | Paperback: 10,05 €<br/>Written in Brazilian Portuguese</p>
+
+      
+    </div>
+
+    <div class="order-2 md:order-2" data-anim>
+        <p class="text-lg md:text-xl mb-4 text-gray-700">Even though the book is in Portuguese, its mission echoes the same approach I bring to my consulting: making complex ideas accessible, without dumbing them down. If you’d like a taste of that clarity — and of my voice — you can read two translated chapters in English on my blog:</p>
+
+       <ul class="space-y-2 mb-6 text-gray-700 list-disc list-inside text-sm">
+        <li>The driving force of science is doubt, not belief</li>
+        <li>Get to know Ms. Science</li>
+       </ul>
+
+       <div class="flex flex-col sm:flex-row gap-4 mb-6">
+        <a href="https://lummoura.github.io/post/book_01/" target="_blank" rel="noopener" class="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-light  transition">View on My Blog</a>      
+       </div>
+
+       <div class="order-2 md:order-2" data-anim>
+        <p class="text-lg md:text-xl mb-4 text-gray-700"><h3 class="font-semibold text-xl mb-3">Note on publications:<h3>
+Published as Luciana Monteiro de Moura, known in France as Luciana Bonnot.
+One brain, two passports, and a scientific track record in English.</p>
+</div>
+
+    </div>
+    </div>
+    <figure class="order-3 md:order-3 flex items-center justify-center" data-anim>
+          <img src="book.webp" alt="CIÊNCIA SEM PACIÊNCIA book cover" class="rounded-2xl shadow-xl w-full max-w-sm mx-auto" loading="lazy" />
+    </figure>
+</div>
+</section>
+
+  <section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let’s Work Together</h2>
+        <p class="text-gray-600">I help teams think, plan smarter, and connect science with strategy.</p> 
+    	<p class="text-gray-600">Share your idea — I’ll reply within 48 hours. All inquiries are handled with professional discretion and confidentiality.</p>
+        <p class="text-gray-600">Need an NDA? I’m happy to sign one if we move forward.</p>
+      </div>
+      <form action="https://formspree.io/f/your-form-id" method="POST" class="max-w-2xl mx-auto grid gap-6 bg-gray-50 p-8 rounded-2xl shadow-lg" data-anim>
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" name="name" placeholder="Full Name" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
+          <input type="email" name="email" placeholder="Email Address" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
+        </div>
+        <input type="text" name="company" placeholder="Organisation / Project" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
+        <textarea name="message" rows="5" placeholder="Tell me about your goals…" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary"></textarea>
+        <button type="submit" class="bg-accent hover:bg-[#E63946]/90 text-white font-semibold py-3 px-6 rounded-lg w-full md:w-auto transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
+    &copy; <span id="year"></span> Luciana Bonnot — All rights reserved.
+  </footer>
+
+  <button id="scrollTop" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition transform hover:scale-105" aria-label="Scroll back to top">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <script>
+    // ---------------- Mobile nav ----------------
+    const navBtn  = document.getElementById('navBtn');
+    const navMenu = document.getElementById('navMenu');
+    navBtn.addEventListener('click', () => {
+      if(navMenu.classList.contains('opacity-0')){
+        navMenu.classList.remove('max-h-0','opacity-0');
+        navMenu.classList.add('max-h-96','opacity-100');
+      } else {
+        navMenu.classList.add('opacity-0');
+        navMenu.classList.remove('max-h-96');
+        setTimeout(()=>navMenu.classList.add('max-h-0'), 350);
+      }
+    });
+
+    // ---------------- Scroll reveal ----------------
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('animate-fadeUp');
+          observer.unobserve(entry.target);
+        }
+      })
+    }, {threshold: .1});
+    document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
+
+    // ---------------- Dynamic year ----------------
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ---------------- Scroll to top --------------
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 600){
+        scrollBtn.classList.remove('opacity-0','pointer-events-none');
+      } else {
+        scrollBtn.classList.add('opacity-0','pointer-events-none');
+      }
+    });
+    scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  </script>
+</body>
+</html>
