@@ -8,45 +8,41 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luciana Bonnot | Neuroimaging Consulting</title>
-  <meta name="description" content="Consulting at the crossroads of neuroimaging and healthcare innovation." />
+  <title>Luciana Bonnot, PhD | Neuroimaging Biomarker Consultant · LuMMiens Consulting</title>
+  <meta name="description" content="Scientific consultant in neuroimaging-derived digital biomarkers and Phase II CNS drug development. Developer of the NdDB Readiness Map. Founder of LuMMiens Consulting." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            // E63946 (Strong Red) - Used for primary actions, highlights, and emphasis
-            // F1FAEE (Light Cream/White) - Used for backgrounds, general text
-            // A8DADC (Light Blue/Teal) - Secondary accent, subtle backgrounds
-            // 457B9D (Medium Blue) - Primary dark blue, for text, icons, hover states
-            // 1D3557 (Darker Blue) - Main primary color, for strong elements
-            primary: {
-              DEFAULT: '#1D3557',     // Darker Blue
-              light:   '#457B9D',     // Medium Blue
-              lighter: '#A8DADC'      // Light Blue/Teal
-            },
-            accent:  '#E63946',       // Strong Red
-            background: '#F1FAEE'    // Light Cream/White
+            midnight:  '#0A0C11',
+            deep:      '#0D1422',
+            slate:     '#1A2235',
+            steel:     '#263045',
+            mist:      '#B4C8D8',
+            frost:     '#F0EDE6',
+            ivory:     '#F5F2EB',
+            teal:      '#457B9D',
+            teallight: '#6A9EBF',
+            amber:     '#D4912E',
+            ash:       '#8096AA',
           },
           fontFamily: {
-            headline: ['Inter', 'sans-serif']
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            body:    ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+            label:   ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
           },
           keyframes: {
             fadeUp: {
               '0%':   {opacity:0, transform:'translateY(20px)'},
               '100%': {opacity:1, transform:'translateY(0)'}
-            },
-            gradientShift: {
-              '0%,100%': {backgroundPosition: '0% 50%'},
-              '50%':      {backgroundPosition: '100% 50%'}
             }
           },
           animation: {
-            fadeUp:        'fadeUp .8s ease-out forwards',
-            gradientShift: 'gradientShift 12s ease infinite'
+            fadeUp: 'fadeUp .8s ease-out forwards',
           }
         }
       }
@@ -54,342 +50,355 @@
   </script>
 
   <style>
-    
-    /* Smooth height+opacity transition for mobile menu */
-    .transition-height {
-      transition: max-height 0.35s ease, opacity 0.35s ease;
+    body { font-family: 'IBM Plex Sans', sans-serif; }
+    .transition-height { transition: max-height 0.35s ease, opacity 0.35s ease; }
+    .nav-link { position: relative; padding-bottom: 2px; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 1px; background: #457B9D;
+      transition: width 0.3s ease;
     }
+    .nav-link:hover::after { width: 100%; }
+    [data-anim] { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    [data-anim].in-view { opacity: 1; transform: translateY(0); }
+    .divider-teal { height: 1px; background: linear-gradient(to right, transparent, #457B9D, transparent); }
   </style>
 </head>
-<body class="antialiased text-gray-800 scroll-smooth bg-background">
-  <!-- <header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur shadow-sm">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#home" class="text-xl font-bold text-primary">Luciana&nbsp;Bonnot</a>
-      <nav class="hidden md:flex space-x-8 font-medium">
-        <a href="#about"    class="hover:text-primary">About</a>
-        <a href="#why"      class="hover:text-primary">Why&nbsp;Me</a>
-        <a href="#services" class="hover:text-primary">Expertise</a>
-        <a href="#course"   class="hover:text-primary">Course</a>
-        <a href="#book"   class="hover:text-primary">Book</a>
+<body class="antialiased font-body scroll-smooth" style="background-color:#F5F2EB; color:#2D3748;">
 
-        <a href="#contact"  class="hover:text-primary">Contact</a>
+  <!-- NAVIGATION -->
+  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300" style="background:rgba(10,12,17,0.96); backdrop-filter:blur(14px); border-bottom:1px solid rgba(38,48,69,0.6);">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="font-display text-xl italic tracking-wide text-teallight hover:text-frost transition-colors duration-200">Luciana&nbsp;Bonnot</a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about"    class="nav-link font-body text-sm tracking-widest uppercase text-mist/70 hover:text-frost transition-colors">About</a>
+        <a href="#why"      class="nav-link font-body text-sm tracking-widest uppercase text-mist/70 hover:text-frost transition-colors">Why&nbsp;Me</a>
+        <a href="#services" class="nav-link font-body text-sm tracking-widest uppercase text-mist/70 hover:text-frost transition-colors">Expertise</a>
+        <a href="#papers"   class="nav-link font-body text-sm tracking-widest uppercase text-mist/70 hover:text-frost transition-colors">Papers</a>
+        <a href="#contact"  class="nav-link font-body text-sm tracking-widest uppercase text-mist/70 hover:text-frost transition-colors">Contact</a>
+        <a href="https://lummiens.com" target="_blank" rel="noopener noreferrer"
+           class="font-body text-sm tracking-widest uppercase border border-teal text-teal px-5 py-2 hover:bg-teal hover:text-midnight transition-all duration-200">
+          LuMMiens →
+        </a>
       </nav>
       <button id="navBtn" class="md:hidden focus:outline-none" aria-label="Toggle navigation menu">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg class="h-6 w-6 text-mist" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
     <div id="navMenu" class="md:hidden max-h-0 opacity-0 overflow-hidden transition-height">
-      <div class="bg-white border-t px-6 pb-4 flex flex-col space-y-2 font-medium">
-        <a href="#about"    class="hover:text-primary">About</a>
-        <a href="#why"      class="hover:text-primary">Why&nbsp;Me</a>
-        <a href="#services" class="hover:text-primary">Expertise</a>
-        <a href="#course"   class="hover:text-primary">Course</a>
-        <a href="#book" class="hover:text-primary">Book</a>
-        <a href="#contact"  class="hover:text-primary">Contact</a>
-      </div>
-    </div>
-  </header> -->
-
-
-<header class="fixed inset-x-0 top-0 z-50 bg-primary-light/90 backdrop-blur shadow-sm">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#home" class="text-white text-xl font-bold">Luciana&nbsp;Bonnot</a>
-      <nav class="hidden md:flex space-x-8 font-medium">
-        <a href="#about"    class="text-white hover:text-primary">About</a>
-        <a href="#why"      class="text-white hover:text-primary">Why&nbsp;Me</a>
-        <a href="#services" class="text-white hover:text-primary">Expertise</a>
-	    <a href="https://lummoura.github.io/" class="text-white hover:text-primary">Blog</a>
-		<a href="#papers" class="text-white hover:text-primary">Papers</a>
-        <a href="#contact"  class="text-white hover:text-primary">Contact</a>
-      </nav>
-      <button id="navBtn" class="md:hidden focus:outline-none" aria-label="Toggle navigation menu">
-        <svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-    <div id="navMenu" class="md:hidden max-h-0 opacity-0 overflow-hidden transition-height">
-      <div class="bg-primary-lighter/90 border-t border-primary-light/20 px-6 pb-4 flex flex-col space-y-2 font-medium">
-        <a href="#about"    class="text-white hover:text-primary">About</a>
-        <a href="#why"      class="text-white hover:text-primary">Why&nbsp;Me</a>
-        <a href="#services" class="text-white hover:text-primary">Expertise</a>
-	    <a href="https://lummoura.github.io/" class="text-white hover:text-primary">Blog</a>
-		<a href="#papers" class="text-white hover:text-primary">Papers</a>
-        <a href="#contact"  class="text-white hover:text-primary">Contact</a>
+      <div class="px-6 pb-4 pt-2 flex flex-col space-y-3" style="background:rgba(10,12,17,0.98);">
+        <a href="#about"    class="font-body text-sm tracking-widest uppercase text-mist/70 hover:text-teal transition-colors">About</a>
+        <a href="#why"      class="font-body text-sm tracking-widest uppercase text-mist/70 hover:text-teal transition-colors">Why&nbsp;Me</a>
+        <a href="#services" class="font-body text-sm tracking-widest uppercase text-mist/70 hover:text-teal transition-colors">Expertise</a>
+        <a href="#papers"   class="font-body text-sm tracking-widest uppercase text-mist/70 hover:text-teal transition-colors">Papers</a>
+        <a href="#contact"  class="font-body text-sm tracking-widest uppercase text-mist/70 hover:text-teal transition-colors">Contact</a>
+        <a href="https://lummiens.com" target="_blank" rel="noopener noreferrer" class="font-body text-sm tracking-widest uppercase text-teal hover:text-teallight transition-colors">LuMMiens Consulting →</a>
       </div>
     </div>
   </header>
 
-  <section id="home" class="pt-32 md:pt-40 pb-20 bg-gradient-to-br from-primary via-[#1D3557] to-primary-light bg-[length:200%_200%] animate-gradientShift text-white">
-  <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12">
 
-    <div class="md:w-1/2" style="animation-delay:.1s" data-anim>
-      <h1 class="font-headline font-extrabold text-4xl md:text-5xl leading-tight mb-6">
-        Bringing <span class="text-primary-lighter">Brain Science</span><br/>
-        to Healthcare Innovation
-      </h1>
+  <!-- HERO -->
+  <section id="home" class="relative pt-32 md:pt-40 pb-24 overflow-hidden" style="background-color:#F5F2EB;">
+    <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-14 relative z-10">
 
-      <p class="text-lg md:text-xl mb-8 opacity-90 max-w-prose">
-        I’m <strong>Luciana Bonnot</strong>, neuroscientist and consultant — I help health tech and medtech teams make informed decisions about brain biomarkers — aligning evidence, trials, and regulatory expectations before costly mistakes happen.
-      </p>
+      <div class="md:w-1/2">
+        <p class="font-label text-xs tracking-[0.2em] uppercase mb-5" style="color:#457B9D;">Neuroimaging Biomarkers · CNS Drug Development</p>
+        <h1 class="font-display font-light text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight mb-6" style="color:#1A3340;">
+          From Imaging-Derived Signals<br/>
+          to <span style="color:#D4912E;" class="italic">Trial-Ready Endpoints</span>
+        </h1>
+        <p class="font-body text-base md:text-lg mb-5 max-w-prose leading-relaxed" style="color:#4A5568;">
+          I'm <strong style="color:#1A3340;">Luciana Bonnot, PhD</strong> — scientific consultant in neuroimaging-derived digital biomarkers (NdDB) and Phase II CNS drug development. I help pharma teams make early, defensible decisions before protocol commitments, vendor lock-in, or costly trial amendments.
+        </p>
+        <p class="font-body text-sm mb-8" style="color:#6B7280;">Based in France. Working internationally in English, French, and Portuguese.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://lummiens.com" target="_blank" rel="noopener noreferrer"
+             class="font-body text-xs tracking-[0.3em] uppercase bg-amber text-midnight px-8 py-3.5 hover:bg-amber/80 transition-colors duration-300">
+            Explore LuMMiens Consulting →
+          </a>
+          <a href="#contact"
+             class="font-body text-xs tracking-[0.3em] uppercase px-8 py-3.5 transition-all duration-300"
+             style="border:1px solid #1A3340; color:#1A3340;" onmouseover="this.style.background='#1A3340';this.style.color='#F5F2EB'" onmouseout="this.style.background='transparent';this.style.color='#1A3340'">
+            Schedule a Call
+          </a>
+        </div>
+      </div>
 
-      <a href="#contact" class="rounded-lg bg-background text-accent font-semibold py-3 px-8 text-center hover:bg-[#E63946]/90 hover:text-white transition">
-        Schedule a Call
-      </a>
+      <figure class="md:w-1/2 flex justify-center">
+        <div class="relative">
+          <div class="absolute -inset-1 rounded-full" style="background:linear-gradient(135deg,#457B9D,#D4912E,#1A3340); border-radius:9999px; z-index:0;"></div>
+          <picture>
+            <source type="image/webp" srcset="PhotoLucianaWebsite.webp" />
+            <img src="PhotoLucianaWebsite.jpg" alt="Luciana Bonnot, PhD"
+                 class="relative rounded-full w-56 h-56 md:w-64 md:h-64 object-cover"
+                 style="object-position:center 15%; border:4px solid #F5F2EB; z-index:1; position:relative;" loading="lazy" />
+          </picture>
+        </div>
+      </figure>
+
     </div>
-
-    <figure class="md:w-1/2 relative" style="animation-delay:.2s" data-anim>
-      <picture>
-        <source type="image/webp" srcset="PhotoLucianaWebsite.webp" />
-        <img
-          src="PhotoLucianaWebsite.jpg"
-          alt="Luciana Bonnot portrait"
-          class="rounded-full shadow-xl w-64 h-64 object-cover mx-auto"
-          loading="lazy"
-        />
-      </picture>
-    </figure>
-
-  </div>
-</section>
+  </section>
 
 
-  <section id="about" class="py-20 bg-background">
-    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+  <!-- ABOUT -->
+  <section id="about" class="py-20" style="background-color:#F5F2EB;">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center" data-anim>
       <div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">About</h2>
-        <p class="text-gray-700 mb-5">With a PhD in Neuroscience and <span class="text-accent font-medium">20+ years</span> across research and hospital-based innovation, I help healthcare and medtech teams turn brain science into decision-ready clinical evidence.</p>
-        <p class="text-gray-700 mb-5">I advise organizations on how to design and evaluate neuroimaging and brain biomarkers so they are scientifically credible and fit for clinical use.</p>
-		<p class="text-gray-700 mb-5">Based in France, I work internationally in English, French, and Portuguese.</p>
+        <p class="font-label text-xs tracking-[0.18em] uppercase text-amber mb-3">Background</p>
+        <h2 class="font-display text-3xl md:text-4xl font-light mb-6" style="color:#1A3340;"">About</h2>
+        <div class="w-12 h-px bg-teal mb-6"></div>
+        <p class="font-body text-gray-700 mb-5">With a PhD in Neuroscience and <span class="text-amber font-medium">20+ years</span> across research, multicentre imaging studies, and clinical development, I specialize in the governance and strategy of neuroimaging-derived digital biomarkers (NdDB) in Phase II CNS drug development.</p>
+        <p class="font-body text-gray-700 mb-5">I work across the full Phase II chain — sponsors, CROs, imaging core labs, and neuroimaging platforms — helping teams establish early readiness gates and defensible governance before protocol lock. My work spans neurology, psychiatry, and rare diseases.</p>
+        <p class="font-body text-gray-700 mb-5">In 2026 I developed the <strong>NdDB Readiness Map</strong> — a practical decision framework that became the foundation of LuMMiens Consulting.</p>
+        <p class="font-body text-gray-600 text-sm">Certified Innovation Path on Digital Medical Devices — <a href="https://eithealth.eu/programmes/digital-med-devices-innov/" target="_blank" rel="noopener noreferrer" class="text-teal hover:text-teallight underline transition-colors">EIT Health</a> (MDR/IVDR, AI integration, device lifecycle governance).</p>
       </div>
       <ul class="space-y-4" role="list">
-        <li class="flex items-start"><span class="mt-1 mr-3 text-accent">&#10004;</span> <span><strong>Neuroimaging biomarker strategy</strong> — Framing, context of use, and evidence pathways.</span></li>
-        <li class="flex items-start"><span class="mt-1 mr-3 text-accent">&#10004;</span> <span><strong>Early-phase neuroimaging decisions</strong> — Feasibility, validation direction, and risk assessment.</span></li>
-        <li class="flex items-start"><span class="mt-1 mr-3 text-accent">&#10004;</span> <span><strong>Clinical and real-world imaging evidence</strong> — Decision-relevant endpoints and meaningful metrics.</span></li>
-        </ul>
+        <li class="flex items-start gap-3"><span class="mt-1 text-teal flex-shrink-0">▸</span><span class="font-body text-gray-700"><strong>NdDB governance & endpoint strategy</strong> — From clinical context evaluation to endpoint role definition and pipeline classification.</span></li>
+        <li class="flex items-start gap-3"><span class="mt-1 text-teal flex-shrink-0">▸</span><span class="font-body text-gray-700"><strong>Acquisition, pipeline & vendor oversight</strong> — Multi-site harmonization, traceability, change-control, and contractual governance.</span></li>
+        <li class="flex items-start gap-3"><span class="mt-1 text-teal flex-shrink-0">▸</span><span class="font-body text-gray-700"><strong>Regulatory posture & SaMD strategy</strong> — Pipeline classification, intended use alignment, and AI/ML governance proportionate to the trial role.</span></li>
+      </ul>
     </div>
   </section>
 
-  <section id="why" class="py-20 bg-background bg-background">
-    <div class="container mx-auto px-6 text-center max-w-4xl" data-anim>
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Work With Me?</h2>
-      <div class="grid md:grid-cols-3 gap-8 text-left">
-        <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition group">
-          <h3 class="font-semibold text-lg mb-2 group-hover:text-primary">Neuroimaging decision-making</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">I help teams make clear, defensible decisions about what imaging data can and cannot support in a clinical context.</p>
+
+  <!-- WHY WORK WITH ME -->
+  <section id="why" class="py-20" style="background-color:#EDEAE3;">
+    <div class="container mx-auto px-6 max-w-5xl" data-anim>
+      <div class="text-center mb-12">
+        <p class="font-label text-xs tracking-[0.18em] uppercase text-amber mb-3">Value</p>
+        <h2 class="font-display text-3xl md:text-4xl font-light mb-4" style="color:#1A3340;"">Why Work With Me?</h2>
+        <div class="w-12 h-px bg-teal mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 text-left">
+        <div class="p-7 border-l-2 border-teal" style="background-color:#F5F2EB;">
+          <h3 class="font-display text-lg font-medium mb-3" style="color:#1A3340;"">Clinical context, first</h3>
+          <p class="font-body text-gray-600 text-sm leading-relaxed">Before governance applies, the clinical rationale must hold. I evaluate whether the NdDB measures something meaningful for this disease and trial role — the judgment no framework replaces.</p>
         </div>
-        <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition group">
-          <h3 class="font-semibold text-lg mb-2 group-hover:text-primary">Early risk reduction</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">I intervene before protocol lock to clarify feasibility, evidence level, and downstream implications.</p>
+        <div class="p-7 border-l-2 border-teal" style="background-color:#F5F2EB;">
+          <h3 class="font-display text-lg font-medium mb-3" style="color:#1A3340;"">Governance judgment</h3>
+          <p class="font-body text-gray-600 text-sm leading-relaxed">Knowing which failure mode is already in motion before protocol lock. Finding the cross-chain conflict between clinical intent, acquisition reality, and processing constraints.</p>
         </div>
-        <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition group">
-          <h3 class="font-semibold text-lg mb-2 group-hover:text-primary">Real-world trial awareness</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">My experience spans research and hospital-based innovation, where imaging, timelines, and constraints must align.</p>
+        <div class="p-7 border-l-2 border-teal" style="background-color:#F5F2EB;">
+          <h3 class="font-display text-lg font-medium mb-3" style="color:#1A3340;"">Cross-chain oversight</h3>
+          <p class="font-body text-gray-600 text-sm leading-relaxed">Working across the full measurement chain — from acquisition through pipeline, vendor governance, and regulatory posture — without replacing any single function.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="py-20 bg-background bg-background">
-    <div class="container mx-auto px-6 text-center mb-14">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Consulting Expertise</h2>
-      <p class="text-gray-600 max-w-3xl mx-auto">I guide brain-focused health innovations from concept to scientific readiness, clarifying neuroimaging strategy and evidence requirements early.</p>
+
+  <!-- CONSULTING EXPERTISE -->
+  <section id="services" class="py-20" style="background-color:#F5F2EB;">
+    <div class="container mx-auto px-6 text-center mb-14" data-anim>
+      <p class="font-label text-xs tracking-[0.18em] uppercase text-amber mb-3">Expertise</p>
+      <h2 class="font-display text-3xl md:text-4xl font-light mb-4" style="color:#1A3340;"">Where I Work</h2>
+      <div class="w-12 h-px bg-teal mx-auto mb-5"></div>
+      <p class="font-body text-gray-600 max-w-2xl mx-auto">Across the six governance dimensions that determine whether a NdDB program is trial-ready — or where the gaps are.</p>
     </div>
-    <div class="container mx-auto px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
-        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
-          <!-- Icon for Project Leadership -  -->
-          <img src="target_figure.svg" alt="Target with arrow icon" class="w-11 h-11" onerror="this.onerror=null; this.src='https://placehold.co/28x28/A8DADC/1D3557?text=Target';" />
+    <div class="container mx-auto px-6 grid gap-6 md:grid-cols-3">
+      <div class="border border-gray-200 p-8 hover:border-teal transition-colors duration-300" style="background-color:#EDEAE3;" data-anim>
+        <div class="w-10 h-10 flex items-center justify-center mb-6" style="border:1px solid rgba(69,123,157,0.4);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#457B9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            <line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/>
+          </svg>
         </div>
-        <h3 class="font-semibold text-xl mb-3">Neuroimaging feasibility & evidence readiness</h3>
-        <p class="text-gray-600">Assessing validation pathways, risks, and operational constraints before protocols or pilots are launched.
-</p>
+        <h3 class="font-display text-lg font-medium mb-3" style="color:#1A3340;"">Endpoint role & governance readiness</h3>
+        <p class="font-body text-gray-600 text-sm leading-relaxed">Defining the NdDB's trial role, minimum evidence package, and cross-chain accountability before protocol and SAP commitments are locked.</p>
       </div>
-      <!-- <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
-        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
-          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2c4.418 0 8 2.62 8 7 0 2.18-1.44 4.09-3.39 5.15.23.93.39 1.83.39 2.83 0 2.21-1.79 4-4 4-1.267 0-2.4-.59-3.1-1.51-.73.91-1.81 1.51-3.1 1.51-2.21 0-4-1.79-4-4 0-1 .16-1.9.39-2.83C5.44 13.09 4 11.18 4 9c0-4.38 3.582-7 8-7z"/></svg>
+      <div class="border border-gray-200 p-8 hover:border-teal transition-colors duration-300" style="background-color:#EDEAE3;" data-anim>
+        <div class="w-10 h-10 flex items-center justify-center mb-6" style="border:1px solid rgba(69,123,157,0.4);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#457B9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Three sites branching from root -->
+            <line x1="4" y1="12" x2="12" y2="12"/>
+            <line x1="12" y1="12" x2="12" y2="5"/>
+            <line x1="12" y1="12" x2="12" y2="19"/>
+            <line x1="12" y1="5"  x2="20" y2="5"/>
+            <line x1="12" y1="12" x2="20" y2="12"/>
+            <line x1="12" y1="19" x2="20" y2="19"/>
+            <!-- Site endpoint dots -->
+            <circle cx="20" cy="5"  r="2" fill="#457B9D"/>
+            <circle cx="20" cy="12" r="2" fill="#D4912E"/>
+            <circle cx="20" cy="19" r="2" fill="#457B9D"/>
+            <!-- Root -->
+            <circle cx="4" cy="12" r="1.5" fill="#457B9D"/>
+          </svg>
         </div>
-        <h3 class="font-semibold text-xl mb-3">Project Leadership</h3>
-        <p class="text-gray-600">Agile & PMP‑aligned management of multi‑disciplinary healthcare studies.</p>
+        <h3 class="font-display text-lg font-medium mb-3" style="color:#1A3340;"">Acquisition & pipeline readiness</h3>
+        <p class="font-body text-gray-600 text-sm leading-relaxed">Multi-site scanner harmonization, pipeline classification, traceability, and change-control assessed against the governance standard required for the trial role.</p>
       </div>
-      -->
-      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
-        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
-          <!-- Updated to use real_world_evidence.svg -->
-          <img src="real_world_evidence_red.svg" alt="RWE" class="w-7 h-7" onerror="this.onerror=null; this.src='https://placehold.co/28x28/A8DADC/1D3557?text=RWE';" />
+      <div class="border border-gray-200 p-8 hover:border-teal transition-colors duration-300" style="background-color:#EDEAE3;" data-anim>
+        <div class="w-10 h-10 flex items-center justify-center mb-6" style="border:1px solid rgba(69,123,157,0.4);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#457B9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L4 6v6c0 4.4 3.4 8.5 8 9.5 4.6-1 8-5.1 8-9.5V6L12 2z"/>
+            <polyline points="9,12 11,14 15,10" stroke="#D4912E" stroke-width="2"/>
+          </svg>
         </div>
-        <h3 class="font-semibold text-xl mb-3">Clinical and real-world imaging evidence</h3>
-        <p class="text-gray-600">Interpreting neuroimaging-derived endpoints and metrics to inform trial and real-world decisions.</p>
-      </div> 
-      <!-- <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
-        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
-          <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z"/></svg>
-        </div>
-        <h3 class="font-semibold text-xl mb-3">Neuroscience Training</h3>
-        <p class="text-gray-600">Engaging workshops translating brain science for clinicians, educators & data teams.</p>
-      </div> -->
-      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-transform transform hover:-translate-y-1 group" data-anim>
-        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-primary/10 mb-6">
-          <!-- Updated to use brain.svg -->
-          <img src="brain_azul.svg" alt="Brain icon" class="w-10 h-10" onerror="this.onerror=null; this.src='https://placehold.co/28x28/A8DADC/1D3557?text=Brain';" />
-        </div>
-        <h3 class="font-semibold text-xl mb-3">Neuroimaging strategy & context of use</h3>
-        <p class="text-gray-600">Clarifying whether neuroimaging is appropriate, what role it should play, and what claims it can realistically support.</p>
+        <h3 class="font-display text-lg font-medium mb-3" style="color:#1A3340;"">Regulatory posture & SaMD strategy</h3>
+        <p class="font-body text-gray-600 text-sm leading-relaxed">Distinguishing clinical validity from pipeline regulatory status. SaMD classification, intended use alignment, and AI/ML governance proportionate to the trial role.</p>
       </div>
+    </div>
   </section>
 
- <section id="papers" class="py-20 bg-background">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-14 max-w-3xl mx-auto" data-anim>
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Papers</h2>
-      <p class="text-gray-600">
-        Practical tools and documentation I share publicly. Reuse is encouraged with attribution (CC BY-NC 4.0).
+
+  <!-- LUMMIENS BRIDGE -->
+  <section class="py-20 bg-midnight text-frost">
+    <div class="container mx-auto px-6 max-w-4xl text-center" data-anim>
+      <p class="font-label text-xs tracking-[0.18em] uppercase text-teal mb-4">The Consulting Practice</p>
+      <h2 class="font-display text-3xl md:text-4xl font-light italic text-frost mb-5">LuMMiens Consulting</h2>
+      <div class="w-12 h-px bg-amber mx-auto mb-8"></div>
+      <p class="font-body text-mist/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+        The NdDB Readiness Map, the 6-dimension governance framework, and the self-assessment tool live at LuMMiens Consulting — the practice built on this work. Six dimensions, from acquisition to regulatory posture.
       </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://lummiens.com" target="_blank" rel="noopener noreferrer"
+           class="font-body text-xs tracking-[0.3em] uppercase bg-amber text-midnight px-8 py-3.5 hover:bg-amber/80 transition-colors duration-300">
+          Visit LuMMiens.com →
+        </a>
+        <a href="https://lummiens.com/readiness-check.html" target="_blank" rel="noopener noreferrer"
+           class="font-body text-xs tracking-[0.3em] uppercase border border-teal/60 text-teal px-8 py-3.5 hover:border-teal hover:bg-teal/10 transition-all duration-300">
+          Take the NdDB Self-Assessment →
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition" data-anim>
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          <div class="min-w-0">
-            <h3 class="text-xl md:text-2xl font-semibold text-primary mb-2">
-              Digital neuroimaging biomarker readiness map
-            </h3>
-            <p class="text-gray-700 mb-4">
-              From imaging-derived signals to trial-ready endpoints in CNS drug development.
-            </p>
 
-            <div class="text-sm text-gray-600 space-y-1">
-              <p><span class="font-medium text-gray-700">Format:</span> PDF</p>
-              <p><span class="font-medium text-gray-700">License:</span> CC BY-NC 4.0</p>
-              <p><span class="font-medium text-gray-700">Year:</span> 2026</p>
+  <!-- PAPERS -->
+  <section id="papers" class="py-20" style="background-color:#F5F2EB;">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-14 max-w-3xl mx-auto" data-anim>
+        <p class="font-label text-xs tracking-[0.18em] uppercase text-amber mb-3">Publications</p>
+        <h2 class="font-display text-3xl md:text-4xl font-light mb-4" style="color:#1A3340;"">Papers</h2>
+        <div class="w-12 h-px bg-teal mx-auto mb-5"></div>
+        <p class="font-body text-gray-600">Practical tools and documentation shared publicly. Reuse encouraged with attribution (CC BY-NC 4.0).</p>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <div class="border border-gray-200 p-8 hover:border-teal transition-colors duration-300" style="background-color:#EDEAE3;" data-anim>
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div class="min-w-0">
+              <h3 class="font-display text-xl font-medium text-midnight mb-2">NdDB Readiness Map — Phase II CNS Drug Development</h3>
+              <p class="font-body text-gray-600 text-sm mb-4 leading-relaxed">A practical decision framework for evaluating neuroimaging-derived digital biomarkers: output classification, pipeline maturity grade criteria, and AI governance framework.</p>
+              <div class="font-label text-xs text-gray-500 space-y-1">
+                <p>PDF · CC BY-NC 4.0 · 2026</p>
+              </div>
+              <p class="font-body text-xs text-gray-500 mt-3">Full framework and interactive tools at <a href="https://lummiens.com/nddb.html" target="_blank" rel="noopener noreferrer" class="text-teal hover:text-teallight underline">lummiens.com</a>.</p>
+            </div>
+            <div class="flex flex-col gap-3 md:items-end shrink-0">
+              <a href="nddb-readiness-map_cns-trials_bonnot_2026_v1-0.pdf"
+                 class="font-body text-xs tracking-[0.3em] uppercase bg-amber text-midnight px-6 py-3 hover:bg-amber/80 transition-colors duration-300" download>
+                Download PDF
+              </a>
+              <a href="nddb-readiness-map_cns-trials_bonnot_2026_v1-0.pdf"
+                 class="font-body text-xs text-teal hover:text-teallight transition-colors"
+                 target="_blank" rel="noopener noreferrer">Open in new tab</a>
             </div>
           </div>
-
-          <div class="flex flex-col gap-3 md:items-end">
-            <a
-              href="nddb-readiness-map_cns-trials_bonnot_2026_v1-0.pdf"
-              class="inline-flex items-center justify-center rounded-lg bg-accent text-white font-semibold py-3 px-6 hover:bg-[#E63946]/90 transition"
-              download
-            >
-              Download PDF
-            </a>
-
-            <a
-              href="nddb-readiness-map_cns-trials_bonnot_2026_v1-0.pdf"
-              class="text-sm font-medium text-primary hover:text-primary-light transition"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open in a new tab
-            </a>
-          </div>
-        </div>
-
-        <div class="mt-6 pt-6 border-t border-gray-100">
-          <p class="text-sm text-gray-600">
-            If you use or adapt figures internally, please cite the document and keep attribution visible.
-          </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-	
-	
-  <section id="testimonials" class="py-20 bg-background bg-neural-pattern">
-    <div class="container mx-auto px-6 text-center mb-14 max-w-4xl" data-anim>
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">What you can expect</h2>
-      <p class="text-gray-600 mb-10">Feedback from collaborators.</p>
-      <div class="grid md:grid-cols-2 gap-8 text-left">
-        <blockquote class="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition">
-          <p class="text-sm text-gray-700 mb-4">“Rapid understanding of complex topics”</p>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-20" style="background-color:#EDEAE3;">
+    <div class="container mx-auto px-6 max-w-4xl" data-anim>
+      <div class="text-center mb-12">
+        <p class="font-label text-xs tracking-[0.18em] uppercase text-amber mb-3">Collaborators</p>
+        <h2 class="font-display text-3xl md:text-4xl font-light mb-4" style="color:#1A3340;"">What you can expect</h2>
+        <div class="w-12 h-px bg-teal mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <blockquote class="border-l-2 border-teal pl-6 py-4" style="background-color:#F5F2EB; padding:1.5rem 1.5rem 1.5rem 1.75rem;">
+          <p class="font-body text-gray-700 italic leading-relaxed mb-3">"Rapid understanding of complex topics"</p>
+          <p class="font-label text-xs text-gray-400 tracking-wider">— Clinical development director, CNS program</p>
         </blockquote>
-        <blockquote class="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition">
-          <p class="text-sm text-gray-700 mb-4">“Solid evidence, without the academic fog”</p>
+        <blockquote class="border-l-2 border-teal pl-6 py-4" style="background-color:#F5F2EB; padding:1.5rem 1.5rem 1.5rem 1.75rem;">
+          <p class="font-body text-gray-700 italic leading-relaxed mb-3">"Solid evidence, without the academic fog"</p>
+          <p class="font-label text-xs text-gray-400 tracking-wider">— Biotech sponsor, Phase II neurology</p>
         </blockquote>
       </div>
     </div>
   </section>
 
- 
 
-  <section id="contact" class="py-20 bg-white">
-  <div class="container mx-auto px-6">
-    <div class="max-w-xl mx-auto text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Let’s Work Together</h2>
-      <p class="text-gray-600">Early, clear decisions around neuroimaging and brain biomarkers.</p>
-      <p class="text-gray-600">Share your idea — I’ll reply within 48 hours. </p>
-      <p class="text-gray-600">Confidentiality assured. NDA available if needed.</p>
-    </div>
-
-    <!-- Web3Forms Integration -->
-    <form action="https://api.web3forms.com/submit " method="POST" class="max-w-2xl mx-auto grid gap-6 bg-gray-50 p-8 rounded-2xl shadow-lg" data-anim>
-      <!-- Access Key -->
-      <input type="hidden" name="access_key" value="9c8b8393-9031-4f5b-9d1e-743372290416" />
-
-      <!-- Bot Verification (Optional) -->
-      <input type="text" name="bot-verification" class="hidden" />
-
-      <!-- Form Fields -->
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="text" name="name" placeholder="Full Name" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
-        <input type="email" name="email" placeholder="Email Address" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
+  <!-- CONTACT -->
+  <section id="contact" class="py-20" style="background-color:#F5F2EB;">
+    <div class="container mx-auto px-6">
+      <div class="max-w-xl mx-auto text-center mb-12" data-anim>
+        <p class="font-label text-xs tracking-[0.18em] uppercase text-amber mb-3">Get in Touch</p>
+        <h2 class="font-display text-3xl md:text-4xl font-light mb-4" style="color:#1A3340;"">Let's Work Together</h2>
+        <div class="w-12 h-px bg-teal mx-auto mb-5"></div>
+        <p class="font-body text-gray-600 text-sm leading-relaxed">If you're working on NdDB integration in Phase II and need a structured, independent perspective — reach out.</p>
+        <p class="font-body text-gray-600 text-sm mt-2">I'll reply within 48 hours. Confidentiality assured. NDA available if needed.</p>
       </div>
-      <input type="text" name="company" placeholder="Organisation / Project" class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary" />
-      <textarea name="message" rows="5" placeholder="Tell me about your goals…" required class="border border-gray-300 rounded-lg px-4 py-3 w-full focus:ring-2 focus:ring-primary"></textarea>
+      <form action="https://api.web3forms.com/submit" method="POST" class="max-w-2xl mx-auto grid gap-5 p-8 border border-gray-200" style="background-color:#EDEAE3;" data-anim>
+        <input type="hidden" name="access_key" value="9c8b8393-9031-4f5b-9d1e-743372290416" />
+        <input type="text" name="bot-verification" class="hidden" />
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" name="name" placeholder="Full Name" required
+                 class="font-body border border-gray-300 px-4 py-3 w-full focus:outline-none focus:border-teal transition-colors" style="background-color:#F5F2EB;" />
+          <input type="email" name="email" placeholder="Email Address" required
+                 class="font-body border border-gray-300 px-4 py-3 w-full focus:outline-none focus:border-teal transition-colors" style="background-color:#F5F2EB;" />
+        </div>
+        <input type="text" name="company" placeholder="Organisation / Project"
+               class="font-body border border-gray-300 px-4 py-3 w-full focus:outline-none focus:border-teal transition-colors" style="background-color:#F5F2EB;" />
+        <textarea name="message" rows="5" placeholder="Tell me about your challenge…" required
+                  class="font-body border border-gray-300 px-4 py-3 w-full focus:outline-none focus:border-teal transition-colors" style="background-color:#F5F2EB;"></textarea>
+        <button type="submit"
+                class="font-body text-xs tracking-[0.3em] uppercase bg-amber text-midnight px-8 py-3.5 hover:bg-amber/80 transition-colors duration-300 w-full md:w-auto">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
 
-      <!-- Submit Button -->
-      <button type="submit" class="bg-accent hover:bg-[#E63946]/90 text-white font-semibold py-3 px-6 rounded-lg w-full md:w-auto transition">Send Message</button>
-    </form>
-  </div>
-</section>
 
-  <footer class="bg-white border-t py-6 text-center text-sm text-gray-500">
-    &copy; <span id="year"></span> Luciana Bonnot — All rights reserved.
+  <footer class="bg-midnight text-mist py-8 text-center">
+    <p class="font-body text-sm mb-2">&copy; <span id="year"></span> Luciana Bonnot, PhD — All rights reserved.</p>
+    <p class="font-label text-xs text-mist/40 tracking-[0.12em]">
+      <a href="https://lummiens.com" target="_blank" rel="noopener noreferrer" class="hover:text-teal transition-colors">LuMMiens Consulting</a>
+    </p>
   </footer>
 
-  <button id="scrollTop" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition transform hover:scale-105" aria-label="Scroll back to top">
+  <button id="scrollTop" class="fixed bottom-6 right-6 bg-midnight border border-teal/40 text-teal p-3 opacity-0 pointer-events-none transition-all hover:bg-teal hover:text-midnight" aria-label="Scroll back to top">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
   </button>
 
   <script>
-    // ---------------- Mobile nav ----------------
     const navBtn  = document.getElementById('navBtn');
     const navMenu = document.getElementById('navMenu');
     navBtn.addEventListener('click', () => {
-      if(navMenu.classList.contains('opacity-0')){
-        navMenu.classList.remove('max-h-0','opacity-0');
-        navMenu.classList.add('max-h-96','opacity-100');
+      if (navMenu.classList.contains('opacity-0')) {
+        navMenu.classList.remove('max-h-0', 'opacity-0');
+        navMenu.classList.add('max-h-96', 'opacity-100');
       } else {
         navMenu.classList.add('opacity-0');
         navMenu.classList.remove('max-h-96');
-        setTimeout(()=>navMenu.classList.add('max-h-0'), 350);
+        setTimeout(() => navMenu.classList.add('max-h-0'), 350);
       }
     });
 
-    // ---------------- Scroll reveal ----------------
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('animate-fadeUp');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
           observer.unobserve(entry.target);
         }
-      })
+      });
     }, {threshold: .1});
     document.querySelectorAll('[data-anim]').forEach(el => observer.observe(el));
 
-    // ---------------- Dynamic year ----------------
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // ---------------- Scroll to top --------------
     const scrollBtn = document.getElementById('scrollTop');
     window.addEventListener('scroll', () => {
-      if(window.scrollY > 600){
-        scrollBtn.classList.remove('opacity-0','pointer-events-none');
-      } else {
-        scrollBtn.classList.add('opacity-0','pointer-events-none');
-      }
+      scrollBtn.classList.toggle('opacity-0', window.scrollY <= 600);
+      scrollBtn.classList.toggle('pointer-events-none', window.scrollY <= 600);
     });
-    scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    scrollBtn.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
   </script>
 </body>
 </html>
