@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genetics, MRI, and patient stratification: where the regulatory risk begins — Luciana Bonnot, PhD</title>
+  <meta name="description" content="How far can neuroimaging advance through the clinical-development pathway before it becomes a regulatory commitment? A follow-up perspective by Luciana Bonnot, PhD." />
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0A0C11',
+            ivory:    '#F5F2EB',
+            ivoryDark:'#EDEAE3',
+            steel:    '#1A3340',
+            blue:     '#457B9D',
+            blueLight:'#6A9EBF',
+            amber:    '#D4912E',
+            mist:     '#B4C8D8',
+            frost:    '#F0EDE6',
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            body:    ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+            label:   ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; background-color: #F5F2EB; }
+
+    .article-body p { margin-bottom: 1.5rem; line-height: 1.8; color: #374151; }
+    .article-body p.lead { font-size: 1.125rem; color: #1A3340; font-weight: 400; }
+    .article-body .question {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #1A3340;
+      border-left: 3px solid #457B9D;
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+    }
+    .article-body .answer {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1A3340;
+      margin-bottom: 1.5rem;
+    }
+    .article-body .highlight { font-weight: 600; color: #1A3340; }
+    .article-body .central-hypothesis {
+      background-color: #EDEAE3;
+      border-left: 3px solid #D4912E;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.95rem;
+      color: #1A3340;
+      line-height: 1.7;
+    }
+    .article-body .scoping-note {
+      background-color: #EDEAE3;
+      border-left: 3px solid #457B9D;
+      padding: 1rem 1.25rem;
+      margin: 1.75rem 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.9rem;
+      color: #1A3340;
+      line-height: 1.75;
+    }
+
+    /* ── FIGURE ── */
+    .nlf { background:#EDEAE3; max-width:100%; padding:32px 28px 24px; margin:2.5rem 0; }
+    .nlf-title { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:1.2rem; line-height:1.25; color:#1A3340; text-align:center; margin-bottom:6px; }
+    .nlf-subtitle { font-family:'IBM Plex Mono',monospace; font-weight:300; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:#8096AA; text-align:center; margin-bottom:28px; }
+    .nlf-body { display:flex; gap:10px; align-items:stretch; }
+    .nlf-axis { width:30px; flex-shrink:0; position:relative; display:flex; align-items:center; justify-content:center; }
+    .nlf-axis-track { position:absolute; top:0; bottom:0; left:50%; transform:translateX(-50%); width:1px; background:linear-gradient(to bottom,#C03818 0%,#D4912E 35%,#88A830 65%,#457B9D 100%); }
+    .nlf-axis-arrow { position:absolute; top:-1px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:3px solid transparent; border-right:3px solid transparent; border-bottom:6px solid #C03818; }
+    .nlf-axis-label { font-family:'IBM Plex Mono',monospace; font-weight:300; font-size:0.5rem; letter-spacing:0.14em; text-transform:uppercase; color:#8096AA; writing-mode:vertical-rl; transform:rotate(180deg); white-space:nowrap; background:#EDEAE3; padding:6px 0; position:relative; z-index:2; }
+    .nlf-rungs { flex:1; }
+    .nlf-rung { display:flex; align-items:center; gap:8px; margin-bottom:3px; }
+    .nlf-num { width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.68rem; color:#F5F2EB; flex-shrink:0; }
+    .nlf-bar { flex:1; padding:8px 12px; border-left:2px solid; background:#F5F2EB; }
+    .nlf-bar-text { font-family:'IBM Plex Sans',sans-serif; font-weight:500; font-size:0.78rem; color:#1A3340; line-height:1.3; }
+    .nlf-risk { width:120px; flex-shrink:0; padding-left:10px; display:flex; align-items:center; }
+    .nlf-risk-text { font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; line-height:1.3; }
+    .nlf-threshold { margin:8px 0; display:flex; flex-direction:column; gap:3px; }
+    .nlf-tz { display:flex; align-items:center; gap:8px; }
+    .nlf-tz-label { font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:0.54rem; letter-spacing:0.14em; text-transform:uppercase; white-space:nowrap; width:160px; flex-shrink:0; }
+    .nlf-tz-line { flex:1; height:1px; }
+    .nlf-tc { display:flex; align-items:center; height:14px; }
+    .nlf-tc-line { flex:1; height:1px; background:#C8BFB0; }
+    .nlf-tc-label { font-family:'IBM Plex Mono',monospace; font-size:0.48rem; letter-spacing:0.18em; text-transform:uppercase; color:#A09080; padding:0 8px; background:#EDEAE3; white-space:nowrap; }
+    .nlf-footer { margin-top:18px; padding-top:14px; border-top:1px solid #C8BFB0; display:flex; align-items:flex-start; gap:10px; }
+    .nlf-caption { font-family:'IBM Plex Mono',monospace; font-weight:300; font-size:0.58rem; color:#8096AA; line-height:1.7; font-style:italic; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- HEADER -->
+  <header style="background:rgba(10,12,17,0.96); backdrop-filter:blur(14px); border-bottom:1px solid rgba(38,48,69,0.6);" class="sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="font-display text-lg italic tracking-wide" style="color:#6A9EBF;">Luciana&nbsp;Bonnot</a>
+      <a href="/#insights" class="font-label text-xs tracking-[0.18em] uppercase transition-colors" style="color:#B4C8D8;" onmouseover="this.style.color='#6A9EBF'" onmouseout="this.style.color='#B4C8D8'">
+        ← Scientific Insights
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ARTICLE -->
+  <main class="max-w-2xl mx-auto px-6 py-16">
+
+    <!-- Meta -->
+    <div class="mb-10">
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="font-label text-xs tracking-[0.15em] uppercase px-3 py-1" style="background-color:#EDEAE3; color:#457B9D;">Neuroimaging Biomarkers</span>
+        <span class="font-label text-xs tracking-[0.15em] uppercase px-3 py-1" style="background-color:#EDEAE3; color:#457B9D;">Regulatory Science</span>
+        <span class="font-label text-xs tracking-[0.15em] uppercase px-3 py-1" style="background-color:#EDEAE3; color:#457B9D;">CNS Clinical Trials</span>
+      </div>
+
+      <h1 class="font-display font-light text-3xl md:text-4xl leading-tight mb-6" style="color:#1A3340;">
+        Genetics, MRI, and patient stratification: where the regulatory risk begins
+      </h1>
+
+      <div class="flex items-center gap-4 pb-6" style="border-bottom: 1px solid #EDEAE3;">
+        <span class="font-label text-xs tracking-[0.15em]" style="color:#8096AA;">Luciana Bonnot, PhD</span>
+        <span style="color:#EDEAE3;">·</span>
+        <span class="font-label text-xs tracking-[0.15em]" style="color:#8096AA;">June 2026</span>
+        <span style="color:#EDEAE3;">·</span>
+        <a href="genetics-mri-schizophrenia-bipolar.html" class="font-label text-xs tracking-[0.15em]" style="color:#457B9D;" onmouseover="this.style.color='#1A3340'" onmouseout="this.style.color='#457B9D'">Read part one →</a>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="article-body">
+
+      <p class="lead">Genetics and MRI offer a compelling way to think about biological trajectories across the schizophrenia–bipolar spectrum. Framing this as a hypothesis-generating stratification model, rather than a clinical decision-making tool, is not a limitation. It is a deliberate choice, and a consequential one.</p>
+
+      <div class="question">Why does the framing matter so much?</div>
+
+      <p>Unlike in academic research, where imaging can serve as a relatively flexible exploratory tool, clinical trials for drug development add extra layers of regulatory, operational, and evidentiary responsibility. Even when academic imaging protocols are approved by ethics committees and are methodologically rigorous, their role is usually different from their role in a drug-development pathway.</p>
+
+      <p>One critical dimension is the role assigned to the neuroimaging biomarker.</p>
+
+      <p>In regulatory terms, this is a context-of-use problem: the question is not only what the biomarker measures, but what decision the biomarker is allowed to support.</p>
+
+      <div class="scoping-note">
+        These considerations apply particularly from Phase 2 onward. In Phase 1, PET imaging is routinely used to characterize target engagement, receptor occupancy, and pharmacodynamic signals. Regulatory expectations for this use are well-established, and the risks described here do not yet apply.
+      </div>
+
+      <p>If neuroimaging is used in a trial, when does it remain a learning tool? And when does it become part of the evidence that must be reproduced, justified, and potentially carried into later development stages, and possibly into the approved label?</p>
+
+      <p>The regulatory risk does not come from acquiring MRI data. It comes from making MRI necessary for interpreting, reproducing, or applying the treatment effect. At lower levels, imaging can help explore mechanisms, characterize patients, or generate subgroup hypotheses. At higher levels, imaging can begin to define who enters the trial, who is considered likely to benefit, or which population the evidence for efficacy supports.</p>
+
+      <p>This is why stratification and enrichment should not be treated as interchangeable. <span class="highlight">Stratification can support learning, balance, or subgroup analysis. Enrichment starts to shape the population in which the treatment effect is demonstrated.</span></p>
+
+      <p>This distinction is especially important in psychiatry. Neuroimaging is not part of routine treatment selection in most psychiatric clinical workflows. Therefore, if an imaging biomarker were used to define the population for a pivotal trial and later contributed to defining the on-label population, the imaging measure would need to be scalable, standardized, reproducible, interpretable, and accessible to the target psychiatric population.</p>
+
+      <p>The same reasoning applies to genetic or omics-based profiles. A biomarker can be scientifically attractive, but if it becomes part of the treatment-eligibility logic, it must also be operationally and clinically deployable.</p>
+
+      <div class="question">So the question is not simply: can neuroimaging stratify patients?</div>
+
+      <p class="answer">The more difficult question is: how far can we let neuroimaging advance through the clinical-development pathway before it becomes a regulatory commitment?</p>
+
+      <!-- FIGURE -->
+      <div class="nlf">
+        <h3 class="nlf-title">How far should neuroimaging go in clinical trials?</h3>
+        <p class="nlf-subtitle">Regulatory dependence scale · imaging role vs label risk</p>
+        <div class="nlf-body">
+          <div class="nlf-axis">
+            <div class="nlf-axis-track"></div>
+            <div class="nlf-axis-arrow"></div>
+            <span class="nlf-axis-label">Increasing regulatory dependence</span>
+          </div>
+          <div class="nlf-rungs">
+            <div class="nlf-rung">
+              <div class="nlf-num" style="background:#C03818;">8</div>
+              <div class="nlf-bar" style="border-color:#C03818;"><span class="nlf-bar-text">Companion / eligibility test</span></div>
+              <div class="nlf-risk"><span class="nlf-risk-text" style="color:#C03818;">Label-defining</span></div>
+            </div>
+            <div class="nlf-rung">
+              <div class="nlf-num" style="background:#D46018;">7</div>
+              <div class="nlf-bar" style="border-color:#D46018;"><span class="nlf-bar-text">Pivotal enrichment biomarker</span></div>
+              <div class="nlf-risk"><span class="nlf-risk-text" style="color:#D46018;">Very high risk</span></div>
+            </div>
+            <div class="nlf-rung">
+              <div class="nlf-num" style="background:#D4912E;">6</div>
+              <div class="nlf-bar" style="border-color:#D4912E;"><span class="nlf-bar-text">Required inclusion criterion</span></div>
+              <div class="nlf-risk"><span class="nlf-risk-text" style="color:#D4912E;">High risk</span></div>
+            </div>
+            <div class="nlf-rung">
+              <div class="nlf-num" style="background:#B8921A;">5</div>
+              <div class="nlf-bar" style="border-color:#B8921A;"><span class="nlf-bar-text">Pre-specified subgroup analysis</span></div>
+              <div class="nlf-risk"><span class="nlf-risk-text" style="color:#B8921A;">Moderate risk</span></div>
+            </div>
+            <div class="nlf-threshold">
+              <div class="nlf-tz">
+                <span class="nlf-tz-label" style="color:#D4912E; text-align:right;">▲ &nbsp;Decision-defining layer</span>
+                <div class="nlf-tz-line" style="background:linear-gradient(to right,#D4912E55,#C8BFB0);"></div>
+              </div>
+              <div class="nlf-tc">
+                <div class="nlf-tc-line"></div>
+                <span class="nlf-tc-label">· commitment threshold ·</span>
+                <div class="nlf-tc-line"></div>
+              </div>
+              <div class="nlf-tz">
+                <span class="nlf-tz-label" style="color:#457B9D;">▼ &nbsp;Evidence-generating layer</span>
+                <div class="nlf-tz-line" style="background:linear-gradient(to right,#457B9D55,#C8BFB0);"></div>
+              </div>
+            </div>
+            <div class="nlf-rung">
+              <div class="nlf-num" style="background:#6A8A30;">4</div>
+              <div class="nlf-bar" style="border-color:#6A8A30;"><span class="nlf-bar-text">Secondary endpoint</span></div>
+              <div class="nlf-risk"><span class="nlf-risk-text" style="color:#6A8A30;">Moderate risk</span></div>
+            </div>
+            <div class="nlf-rung">
+              <div class="nlf-num" style="background:#3A8878;">3</div>
+              <div class="nlf-bar" style="border-color:#3A8878;"><span class="nlf-bar-text">Stratification factor for analysis</span></div>
+              <div class="nlf-risk"><span class="nlf-risk-text" style="color:#3A8878;">Low to moderate</span></div>
+            </div>
+            <div class="nlf-rung">
+              <div class="nlf-num" style="background:#4A8AAA;">2</div>
+              <div class="nlf-bar" style="border-color:#4A8AAA;"><span class="nlf-bar-text">Exploratory biomarker</span></div>
+              <div class="nlf-risk"><span class="nlf-risk-text" style="color:#4A8AAA;">Low risk</span></div>
+            </div>
+            <div class="nlf-rung">
+              <div class="nlf-num" style="background:#457B9D;">1</div>
+              <div class="nlf-bar" style="border-color:#457B9D;"><span class="nlf-bar-text">Mechanistic readout</span></div>
+              <div class="nlf-risk"><span class="nlf-risk-text" style="color:#457B9D;">Low risk</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="nlf-footer">
+          <svg width="20" height="18" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-top:2px;">
+            <path d="M11 18C11 18 3 14 3 8C3 5.2 5.2 3 8 3C9.1 3 10.1 3.4 11 4C11.9 3.4 12.9 3 14 3C16.8 3 19 5.2 19 8C19 14 11 18 11 18Z" stroke="#8096AA" stroke-width="1" fill="none"/>
+            <path d="M11 4C11 4 11 10 11 18" stroke="#8096AA" stroke-width="0.75" stroke-dasharray="2 1.5"/>
+            <path d="M7 7C8.5 7 9.5 8 9.5 9" stroke="#8096AA" stroke-width="0.75" fill="none"/>
+            <path d="M15 7C13.5 7 12.5 8 12.5 9" stroke="#8096AA" stroke-width="0.75" fill="none"/>
+            <path d="M5 10C6.5 10 8 11 8 12.5" stroke="#8096AA" stroke-width="0.75" fill="none"/>
+            <path d="M17 10C15.5 10 14 11 14 12.5" stroke="#8096AA" stroke-width="0.75" fill="none"/>
+          </svg>
+          <p class="nlf-caption">
+            The more the trial depends on imaging to prove efficacy in a selected population,<br>
+            the more likely imaging becomes part of the approved treatment population.
+          </p>
+        </div>
+      </div>
+      <!-- /FIGURE -->
+
+      <p>This scale is not meant as a formal regulatory classification. It is a practical way to visualize how regulatory dependence increases as imaging moves from supporting biological interpretation to defining eligibility, enrichment, or treatment-use logic.</p>
+
+      <p>In other words, the regulatory issue is not the scientific value of imaging. It is the dependency created by the trial design. The more the trial relies on imaging to select patients, interpret efficacy, or define the population that benefits, the more the sponsor must be prepared to defend the biomarker's biological rationale, technical validity, operational feasibility, and clinical deployability.</p>
+
+      <p><span class="highlight">This is where the regulatory gap begins.</span></p>
+
+      <p>For psychiatric trials, this gap is particularly sensitive. MRI can be powerful for research, mechanism exploration, and biological subgroup discovery. But if it is pushed too early into an eligibility-defining role, it may create a development pathway that is difficult to reproduce in real-world psychiatric care.</p>
+
+      <div class="central-hypothesis">
+        A more cautious strategy would be to keep neuroimaging first in the evidence-generating layer: to support mechanistic understanding, characterize heterogeneity, and test whether biologically meaningful subgroups exist. Only after reproducibility, clinical relevance, incremental value, and feasibility are established should imaging move toward the decision-defining layer.
+      </div>
+
+      <p>The same principle applies to genetics, omics, and other high-dimensional biomarkers. A stratification signal is not automatically a trial-ready enrichment tool. It must earn that role.</p>
+
+    </div>
+
+    <!-- Back link to part one -->
+    <div class="mt-10 pt-6" style="border-top:1px solid #EDEAE3;">
+      <p class="font-label text-xs tracking-[0.15em] uppercase mb-2" style="color:#8096AA;">Part one of this series</p>
+      <a href="genetics-mri-schizophrenia-bipolar.html" class="font-body text-sm" style="color:#457B9D;" onmouseover="this.style.color='#1A3340'" onmouseout="this.style.color='#457B9D'">
+        Can genetics and MRI help identify biological trajectories across the schizophrenia–bipolar spectrum? →
+      </a>
+    </div>
+
+    <!-- Back -->
+    <div class="mt-8">
+      <a href="/#insights" class="font-label text-xs tracking-[0.18em] uppercase transition-colors" style="color:#457B9D;" onmouseover="this.style.color='#1A3340'" onmouseout="this.style.color='#457B9D'">
+        ← Back to Scientific Insights
+      </a>
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center" style="background-color:#0A0C11;">
+    <p class="font-body text-sm mb-2" style="color:#B4C8D8;">&copy; <span id="year"></span> Luciana Bonnot, PhD — All rights reserved.</p>
+    <p class="font-label text-xs" style="color:rgba(128,150,170,0.4);">
+      <a href="https://lummiens.com" target="_blank" rel="noopener noreferrer" style="transition:color 0.2s;" onmouseover="this.style.color='#457B9D'" onmouseout="this.style.color='rgba(128,150,170,0.4)'">LuMMiens Consulting</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
