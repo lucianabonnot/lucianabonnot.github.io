@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garbage in, garbage out: the business gap behind neuroimaging biomarker strategies in CNS trials — Luciana Bonnot, PhD</title>
+  <meta name="description" content="Neuroimaging biomarkers in CNS trials are often treated as a scientific problem. The deeper problem is an incentive gap between Phase I and Phase II. A perspective by Luciana Bonnot, PhD." />
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0A0C11',
+            ivory:    '#F5F2EB',
+            ivoryDark:'#EDEAE3',
+            steel:    '#1A3340',
+            blue:     '#457B9D',
+            blueLight:'#6A9EBF',
+            amber:    '#D4912E',
+            mist:     '#B4C8D8',
+            frost:    '#F0EDE6',
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            body:    ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+            label:   ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'IBM Plex Sans', sans-serif; background-color: #F5F2EB; }
+
+    .article-body p { margin-bottom: 1.5rem; line-height: 1.8; color: #374151; }
+    .article-body p.lead { font-size: 1.125rem; color: #1A3340; font-weight: 400; }
+    .article-body .question {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #1A3340;
+      border-left: 3px solid #457B9D;
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+    }
+    .article-body .answer {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1A3340;
+      margin-bottom: 1.5rem;
+    }
+    .article-body .highlight { font-weight: 600; color: #1A3340; }
+    .article-body .key-statement {
+      background-color: #EDEAE3;
+      border-left: 3px solid #D4912E;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.95rem;
+      color: #1A3340;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- HEADER -->
+  <header style="background:rgba(10,12,17,0.96); backdrop-filter:blur(14px); border-bottom:1px solid rgba(38,48,69,0.6);" class="sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="font-display text-lg italic tracking-wide" style="color:#6A9EBF;">Luciana&nbsp;Bonnot</a>
+      <a href="/#insights" class="font-label text-xs tracking-[0.18em] uppercase transition-colors" style="color:#B4C8D8;" onmouseover="this.style.color='#6A9EBF'" onmouseout="this.style.color='#B4C8D8'">
+        ← Scientific Insights
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ARTICLE -->
+  <main class="max-w-2xl mx-auto px-6 py-16">
+
+    <!-- Meta -->
+    <div class="mb-8">
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="font-label text-xs tracking-[0.15em] uppercase px-3 py-1" style="background-color:#EDEAE3; color:#457B9D;">Neuroimaging Biomarkers</span>
+        <span class="font-label text-xs tracking-[0.15em] uppercase px-3 py-1" style="background-color:#EDEAE3; color:#457B9D;">CNS Drug Development</span>
+        <span class="font-label text-xs tracking-[0.15em] uppercase px-3 py-1" style="background-color:#EDEAE3; color:#457B9D;">Phase I / Phase II</span>
+      </div>
+
+      <h1 class="font-display font-light text-3xl md:text-4xl leading-tight mb-6" style="color:#1A3340;">
+        Garbage in, garbage out: the business gap behind neuroimaging biomarker strategies in CNS trials
+      </h1>
+
+      <div class="flex items-center gap-4 pb-6" style="border-bottom: 1px solid #EDEAE3;">
+        <span class="font-label text-xs tracking-[0.15em]" style="color:#8096AA;">Luciana Bonnot, PhD</span>
+        <span style="color:#EDEAE3;">·</span>
+        <span class="font-label text-xs tracking-[0.15em]" style="color:#8096AA;">June 2026</span>
+      </div>
+    </div>
+
+    <!-- Hero image -->
+    <div class="mb-10 -mx-6">
+      <img
+        src="garbage-bin.jpg"
+        alt="Crumpled paper being thrown into a plastic bin — a visual metaphor for misclassified evidence in drug development"
+        class="w-full object-cover"
+        style="max-height: 420px; object-position: center 30%;"
+      />
+      <p class="font-label text-xs tracking-[0.12em] px-6 mt-2" style="color:#8096AA;">
+        Photo: Pexels / Shvets Production
+      </p>
+    </div>
+
+    <!-- Body -->
+    <div class="article-body">
+
+      <p class="lead">A drug can be safe, tolerable, and well-characterized pharmacokinetically. And still enter Phase II without clear evidence that it is doing anything meaningful in the brain.</p>
+
+      <p>This is where a gap lives. Not a scientific gap. A business one.</p>
+
+      <p>Neuroimaging biomarkers in CNS clinical trials are usually framed as a scientific or technical problem: which modality to use, which signal to measure, whether to prioritize target engagement, pharmacodynamic response, patient stratification, or disease progression. Which population to study — healthy volunteers, early-stage patients, prodromal groups, treatment-resistant subgroups, or broader diagnostic populations. These questions matter. But they may be secondary to a more structural problem.</p>
+
+      <p>Phase I has a specific role in drug development, and early human studies must prioritize safety. That logic is sound. But Phase I is also rewarded for being fast, lean, and PK-oriented. Including neuroimaging beyond PET to characterize pharmacodynamic activity might increase costs and delay decisions. It appears as an optional scientific burden, not a development requirement.</p>
+
+      <p>The contradiction is this: if Phase II later depends on neuroimaging to support mechanism, stratification, or treatment-response interpretation, the absence of an early pharmacodynamic mindset drives costs far higher than the early investment would have been.</p>
+
+      <p><span class="highlight">This is not primarily a neuroimaging problem. It is an incentive problem.</span></p>
+
+      <div class="key-statement">
+        If the uncertainty has not been removed, it will only be transferred. If Phase I does not ask a clear pharmacodynamic question, Phase II may begin with weak assumptions. The selected dose may be tolerable but not biologically active in the target system.
+      </div>
+
+      <p>Etkin, Powell, and Savitz (2025) argue that neuroimaging can help de-risk CNS drug development, particularly in psychiatry, through pharmacodynamic measures, target engagement, and patient stratification. They also emphasize that this requires a deeper commitment to a precision-oriented development model, rather than treating neuroimaging as a marginal or occasional add-on. But neuroimaging cannot de-risk Phase II if the evidence needed to guide its use has not been generated earlier. An imaging endpoint may be scientifically attractive and still not be aligned with the drug's mechanism of action.</p>
+
+      <div class="question">The central question is not simply: should we include neuroimaging in Phase II?</div>
+
+      <p class="answer">The better question is: what evidence do we need before Phase II to know whether neuroimaging will be decision-useful?</p>
+
+      <p>A stronger development strategy would not mean adding expensive neuroimaging to every Phase I study. It would mean creating a structured bridge between early pharmacology and the later adoption of biomarkers, so that Phase II begins with assumptions that have been tested, not inherited.</p>
+
+      <p>Neuroimaging should not be included because it is technologically impressive. It should be included because it answers a specific development question and improves a decision. If the early evidence is weak, a larger Phase II will not become more informative. It will only become more expensive.</p>
+
+      <p><span class="highlight">Garbage in, garbage out.</span></p>
+
+    </div>
+
+    <!-- Reference -->
+    <div class="mt-12 pt-8" style="border-top:1px solid #EDEAE3;">
+      <p class="font-label text-xs tracking-[0.15em] uppercase mb-3" style="color:#8096AA;">Reference</p>
+      <ol class="space-y-3 list-decimal list-inside">
+        <li class="font-body text-sm leading-relaxed" style="color:#6B7280;">
+          Etkin, A., Powell, J., & Savitz, A. J. (2025). Opportunities for use of neuroimaging in de-risking drug development and improving clinical outcomes in psychiatry: an industry perspective. <em>Neuropsychopharmacology</em>, 50, 258–268.
+          <a href="https://doi.org/10.1038/s41386-024-01970-8" target="_blank" rel="noopener noreferrer" style="color:#457B9D; text-decoration:underline;" onmouseover="this.style.color='#1A3340'" onmouseout="this.style.color='#457B9D'">https://doi.org/10.1038/s41386-024-01970-8</a>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Series links -->
+    <div class="mt-10 pt-6" style="border-top:1px solid #EDEAE3;">
+      <p class="font-label text-xs tracking-[0.15em] uppercase mb-3" style="color:#8096AA;">Related insights</p>
+      <div class="flex flex-col gap-2">
+        <a href="neuroimaging-regulatory-risk.html" class="font-body text-sm" style="color:#457B9D;" onmouseover="this.style.color='#1A3340'" onmouseout="this.style.color='#457B9D'">
+          Genetics, MRI, and patient stratification: where the regulatory risk begins →
+        </a>
+        <a href="genetics-mri-schizophrenia-bipolar.html" class="font-body text-sm" style="color:#457B9D;" onmouseover="this.style.color='#1A3340'" onmouseout="this.style.color='#457B9D'">
+          Can genetics and MRI help identify biological trajectories across the schizophrenia–bipolar spectrum? →
+        </a>
+      </div>
+    </div>
+
+    <!-- Back -->
+    <div class="mt-8">
+      <a href="/#insights" class="font-label text-xs tracking-[0.18em] uppercase transition-colors" style="color:#457B9D;" onmouseover="this.style.color='#1A3340'" onmouseout="this.style.color='#457B9D'">
+        ← Back to Scientific Insights
+      </a>
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center" style="background-color:#0A0C11;">
+    <p class="font-body text-sm mb-2" style="color:#B4C8D8;">&copy; <span id="year"></span> Luciana Bonnot, PhD — All rights reserved.</p>
+    <p class="font-label text-xs" style="color:rgba(128,150,170,0.4);">
+      <a href="https://lummiens.com" target="_blank" rel="noopener noreferrer" style="transition:color 0.2s;" onmouseover="this.style.color='#457B9D'" onmouseout="this.style.color='rgba(128,150,170,0.4)'">LuMMiens Consulting</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
